@@ -6,7 +6,7 @@ pub trait Window<I: Input>: Sized {
     fn poll_events(&mut self) -> bool;
 
     fn begin_render(&mut self, clear_color: [f32; 4]);
-    fn end_render(&mut self);
+    fn end_render(&mut self) -> Result<(), Box<dyn std::error::Error>>;
 
     fn input(&self) -> &I;
 
