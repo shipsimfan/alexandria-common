@@ -10,4 +10,5 @@ pub trait Shader: Sized {
     ) -> Result<Self, Box<dyn std::error::Error>>;
 
     fn set_active(&mut self);
+    fn clear_active(&mut self);
 }

@@ -13,5 +13,5 @@ pub trait ConstantBuffer<T>: Sized {
     fn set_slot(&mut self, new_slot: usize);
 
     fn set_active(&mut self);
-    fn set_active_compute(&mut self);
+    fn clear_active(&mut self);
 }
