@@ -9,6 +9,7 @@ pub trait Window<I: Input>: Sized {
     fn end_render(&mut self) -> Result<(), Box<dyn std::error::Error>>;
 
     fn input(&self) -> &I;
+    fn input_mut(&mut self) -> &mut I;
 
     fn width(&self) -> usize;
     fn height(&self) -> usize;
