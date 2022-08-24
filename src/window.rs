@@ -12,4 +12,7 @@ pub trait Window<I: Input>: Sized {
 
     fn width(&self) -> usize;
     fn height(&self) -> usize;
+
+    fn is_mouse_locked(&self) -> bool;
+    fn set_mouse_lock(&mut self, lock: bool);
 }
