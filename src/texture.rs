@@ -1,6 +1,11 @@
 use crate::{Input, Window};
 use ginger::Image;
 
+pub enum SampleType {
+    Point,
+    Linear,
+}
+
 pub trait Texture1D: Sized {
     type Window<I: Input>: Window<I>;
 
@@ -22,6 +27,7 @@ pub trait Texture2D: Sized {
     fn new<I: Input>(
         image: &Image<f32>,
         slot: usize,
+        sample_type: SampleType,
         window: &mut Self::Window<I>,
     ) -> Result<Self, Box<dyn std::error::Error>>;
 
