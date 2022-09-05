@@ -10,10 +10,12 @@ pub trait Mesh<V>: Sized {
     ) -> Result<Self, Box<dyn std::error::Error>>;
 
     fn update_vertices<I: Input>(
+        &mut self,
         vertices: &[V],
         window: &mut Self::Window<I>,
     ) -> Result<(), Box<dyn std::error::Error>>;
     fn update_indices<I: Input>(
+        &mut self,
         indices: &[u32],
         window: &mut Self::Window<I>,
     ) -> Result<(), Box<dyn std::error::Error>>;
