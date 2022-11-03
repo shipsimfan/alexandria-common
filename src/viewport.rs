@@ -1,4 +1,4 @@
-use crate::{Input, Vector2, Window};
+use crate::Vector2;
 
 pub trait ViewportUpdater {
     // Returns (top_left, size)
@@ -6,10 +6,7 @@ pub trait ViewportUpdater {
 }
 
 pub trait Viewport {
-    type Window<I: Input>: Window<I>;
-    fn new(top_left: Vector2, size: Vector2) -> Self;
-
-    fn set_active<I: Input>(&mut self, window: &mut Self::Window<I>);
+    fn set_active(&mut self);
     fn update(&mut self, top_left: Vector2, size: Vector2);
 }
 

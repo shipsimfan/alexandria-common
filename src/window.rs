@@ -1,7 +1,7 @@
 use crate::{Input, Vector2, ViewportUpdater};
 
 pub trait Window<I: Input>: Sized {
-    type Viewport: crate::Viewport<Window<I> = Self>;
+    type Viewport: crate::Viewport;
 
     fn new(
         title: &str,
