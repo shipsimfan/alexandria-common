@@ -1,4 +1,4 @@
-use crate::{Input, Vector2, ViewportUpdater};
+use crate::{viewport, Input, Vector2, ViewportUpdater};
 
 pub trait Window<I: Input>: Sized {
     type Viewport: crate::Viewport;
@@ -31,6 +31,7 @@ pub trait Window<I: Input>: Sized {
         size: Vector2,
         updater: Option<Box<dyn ViewportUpdater>>,
     ) -> usize;
+    fn set_default_viewport(&mut self, viewport: usize);
     fn update_viewport(&mut self, viewport: usize, top_left: Vector2, size: Vector2);
     fn set_active_viewport(&mut self, viewport: usize);
     fn remove_viewport(&mut self, viewport: usize);
