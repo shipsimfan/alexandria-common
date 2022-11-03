@@ -7,6 +7,7 @@ mod math;
 mod mesh;
 mod shader;
 mod texture;
+mod viewport;
 mod window;
 
 pub use constant_buffer::*;
@@ -16,4 +17,5 @@ pub use math::*;
 pub use mesh::*;
 pub use shader::*;
 pub use texture::*;
+pub use viewport::*;
 pub use window::*;
