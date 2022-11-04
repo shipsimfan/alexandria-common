@@ -1,4 +1,4 @@
-use crate::{viewport, Input, Vector2, ViewportUpdater};
+use crate::{Input, Vector2, ViewportUpdater};
 
 pub trait Window<I: Input>: Sized {
     type Viewport: crate::Viewport;
