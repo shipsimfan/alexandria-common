@@ -1,13 +1,127 @@
 pub trait Input {
     fn new() -> Self;
 
-    fn key_down(&mut self, key: u8);
-    fn key_up(&mut self, key: u8);
-    fn mouse_down(&mut self, key: u8);
-    fn mouse_up(&mut self, key: u8);
+    fn key_down(&mut self, key: Key);
+    fn key_up(&mut self, key: Key);
+    fn mouse_down(&mut self, key: MouseButton);
+    fn mouse_up(&mut self, key: MouseButton);
     fn update_mouse_position(&mut self, position: (isize, isize));
     fn set_mouse_lock(&mut self, state: bool);
     fn frame_reset(&mut self);
 
     fn is_mouse_locked(&self) -> bool;
+}
+
+pub enum MouseButton {
+    Primary,
+    Secondary,
+    Middle,
+}
+
+#[repr(u8)]
+#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum Key {
+    Backspace = 0x08,
+    Tab,
+    Enter = 0x0D,
+    Pause = 0x13,
+    CapsLock,
+    Escape = 0x1B,
+    Space = b' ',
+    PageUp,
+    PageDown,
+    End,
+    Home,
+    LeftArrow,
+    UpArrow,
+    RightArrow,
+    DownArrow,
+    PrintScreen = 0x2C,
+    Insert,
+    Delete,
+    _0 = b'0',
+    _1,
+    _2,
+    _3,
+    _4,
+    _5,
+    _6,
+    _7,
+    _8,
+    _9,
+    A = b'A',
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z,
+    Windows,
+    Numpad0 = 0x60,
+    Numpad1,
+    Numpad2,
+    Numpad3,
+    Numpad4,
+    Numpad5,
+    Numpad6,
+    Numpad7,
+    Numpad8,
+    Numpad9,
+    Multiply,
+    Add,
+    Seperator,
+    Subtract,
+    Decimal,
+    Divide,
+    F1,
+    F2,
+    F3,
+    F4,
+    F5,
+    F6,
+    F7,
+    F8,
+    F9,
+    F10,
+    F11,
+    F12,
+    F13,
+    F14,
+    F15,
+    F16,
+    F17,
+    F18,
+    F19,
+    F20,
+    F21,
+    F22,
+    F23,
+    F24,
+    NumLock = 0x90,
+    ScrollLock = 0x91,
+    LeftShift = 0xA0,
+    RightShift,
+    LeftControl,
+    RightControl,
+    LeftAlt,
+    RightAlt,
 }
