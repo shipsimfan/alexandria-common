@@ -12,6 +12,8 @@ pub trait Input {
     fn is_mouse_locked(&self) -> bool;
 }
 
+#[repr(u8)]
+#[derive(Clone, Copy, PartialEq, Eq)]
 pub enum MouseButton {
     Primary,
     Secondary,
@@ -121,4 +123,8 @@ pub enum Key {
     F24,
     NumLock = 0x90,
     ScrollLock,
+    Plus = 0xBB,
+    Comma,
+    Minus,
+    Period,
 }
