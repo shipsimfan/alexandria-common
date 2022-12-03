@@ -41,11 +41,11 @@ impl ViewportUpdater for FixedAspectUpdater {
         if window_aspect > self.aspect {
             let size = Vector2::new(self.aspect * new_window_size.y(), new_window_size.y());
             let top_left = Vector2::new((new_window_size.x() - size.x()) / 2.0, 0.0);
-            (size, top_left)
+            (top_left, size)
         } else {
             let size = Vector2::new(new_window_size.x(), new_window_size.x() / self.aspect);
             let top_left = Vector2::new(0.0, (new_window_size.y() - size.y()) / 2.0);
-            (size, top_left)
+            (top_left, size)
         }
     }
 }
